@@ -11,3 +11,12 @@ script.
   localStorage.dark = !(html.dataset.dark == 'true');
   html.dataset.dark = localStorage.dark;
   });
+
+  let timer;
+  window.addEventListener('scroll', function () {
+    clearTimeout(timer);
+    toggle.style.opacity = 1;
+    timer = setTimeout(() => {
+      toggle.style.opacity = 0;
+    }, 3000);
+  });
